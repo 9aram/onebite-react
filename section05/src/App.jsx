@@ -1,29 +1,38 @@
+import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import Button from "./components/Botton";
 
-import './App.css'
-
-const Header2 = ()=> {
+const Header2 = () => {
   return (
-   <header>
-     <h1>header</h1>
-   </header>
-  );
-}
-
-function Header(){
-   return (
     <header>
       <h1>header</h1>
     </header>
-   )
-}
-function App() {
+  );
+};
 
+function App() {
+  const buttonProps = {
+    text: "mail",
+    color: "red",
+    a: 1,
+    b: 2,
+    c: 3,
+  };
   return (
     <>
       <Header />
-      <h1>안뇽 리액트</h1>
+      <Main />
+      <Footer />
+      <Button text={"카페"} color={"red"} />
+      <Button {...buttonProps} />
+      <Button text={"메일"}>
+        <div>자식요소 </div>
+        <Header />
+      </Button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
