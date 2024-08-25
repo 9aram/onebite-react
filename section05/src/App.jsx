@@ -3,15 +3,8 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Button from "./components/Botton";
-
-const Header2 = () => {
-  return (
-    <header>
-      <h1>header</h1>
-    </header>
-  );
-};
-
+import { useState } from "react";
+import Register from "./components/Register";
 function App() {
   const buttonProps = {
     text: "mail",
@@ -20,17 +13,20 @@ function App() {
     b: 2,
     c: 3,
   };
+
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
-      <Button text={"카페"} color={"red"} />
-      <Button {...buttonProps} />
-      <Button text={"메일"}>
-        <div>자식요소 </div>
-        <Header />
-      </Button>
+      <div>
+        <Register></Register>
+        <Main />
+        <Footer />
+        <Button text={"카페"} color={"red"} />
+        <Button {...buttonProps} />
+        <Button text={"메일"}>
+          <div>자식요소 </div>
+          <Header />
+        </Button>
+      </div>
     </>
   );
 }
